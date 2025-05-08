@@ -27,7 +27,10 @@ function Filmes() {
   return (
     <div className="lista">
       <h1 className="titulo">Filmes Mais Populares</h1>
-      {filmes.map(filme => (
+      {filmes.length === 0 ? (
+        <p>Carregando filmes...</p>
+      ) : (
+      filmes.map(filme => (
         <div className="coluna" key={filme.id}>
           <Link to={`/movie/${filme.id}`}>
             <img
@@ -39,7 +42,8 @@ function Filmes() {
             <p className="avaliacao">  {filme.vote_average}</p>
           </Link>
         </div>
-      ))}
+        ))
+      )}
     </div>
   );
 }
