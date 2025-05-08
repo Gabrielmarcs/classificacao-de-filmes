@@ -19,11 +19,14 @@ function Lancamentos() {
   const [filmes, setFilmes] = useState<Filme[]>([]);
 
   useEffect(() => {
+    const anoAtual = new Date().getFullYear();
     api.get('movie/upcoming?language=pt-BR&page=1')
     .then(resposta => {
-      //exibir os 10 primeiros filmes
-      const dezFilmes = resposta.data.results.slice(0, 10);
-      setFilmes(dezFilmes);
+      //exibir os filmes do ano atual
+      const filmesDoAnoAtual = resposta.data.results.filter(
+        (filme : Filme) => new Date(filme.release_date).getFullYear() === anoAtual
+      );
+      setFilmes(filmesDoAnoAtual);
     })
     .catch(error => console.error(error));
   }, []);
