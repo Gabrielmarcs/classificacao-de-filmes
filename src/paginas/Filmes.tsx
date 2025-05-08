@@ -2,35 +2,42 @@ import { useEffect, useState } from 'react';
 import api from '../servicos/api';
 import { Link } from 'react-router-dom';
 
-interface Movie {
+interface Filme {
   id: number;
   title: string;
   poster_path: string;
+  vote_average: number;
 }
 
 function Filmes() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [filmes, setFilmes] = useState<Filme[]>([]);
 
   useEffect(() => {
+    // Fazendo a requisição para a API
+    // e armazenando os filmes no estado
     api.get('movie/popular?language=pt-BR&page=1')
-    .then(response => {
-      console.log(response.data.results);  // Verifique os dados aqui
-      setMovies(response.data.results);
+    .then(resposta => {
+      // verifica se a resposta no console
+      console.log(resposta.data.results);
+      // Atualiza o estado com os filmes recebidos
+      // e armazena na variável filmes
+      setFilmes(resposta.data.results);
     })
     .catch(error => console.error(error));
   }, []);
 
   return (
-    <div className="row">
-      {movies.map(movie => (
-        <div className="col-6 col-md-4 col-lg-3 mb-4" key={movie.id}>
-          <Link to={`/movie/${movie.id}`}>
+    <div className="lista"> 
+      {filmes.map(filme => (
+        <div className="coluna" key={filme.id}>
+          <Link to={`/movie/${filme.id}`}>
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              className="img-fluid rounded"
-              alt={movie.title}
+              src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`}
+              className="imagem-filme"
+              alt={filme.title}
             />
-            <p className="mt-2 text-center">{movie.title}</p>
+            <p className="titulo">{filme.title}</p>
+            <p className="avaliacao">  {filme.vote_average}</p>
           </Link>
         </div>
       ))}
