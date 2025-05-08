@@ -1,3 +1,4 @@
+import '../estilos/rodape.scss';
 const Rodape = () => {
   return (
     <footer>

@@ -1,0 +1,13 @@
+@import '../estilos/global.scss';
+
+footer{
+    background-color:black;
+    padding: 0.3rem;
+
+    p{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+    }
+}

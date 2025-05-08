@@ -2,6 +2,7 @@ import '../estilos/menu.scss';
 
 const Menu = () => {
     return (
+    
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
