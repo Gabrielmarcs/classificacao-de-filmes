@@ -17,17 +17,16 @@ function Filmes() {
     // e armazenando os filmes no estado
     api.get('movie/popular?language=pt-BR&page=1')
     .then(resposta => {
-      // verifica se a resposta no console
-      console.log(resposta.data.results);
-      // Atualiza o estado com os filmes recebidos
-      // e armazena na variável filmes
-      setFilmes(resposta.data.results);
+      //exibir os 10 primeiros filmes
+      const dezFilmes = resposta.data.results.slice(0, 10);
+      setFilmes(dezFilmes);
     })
     .catch(error => console.error(error));
   }, []);
 
   return (
-    <div className="lista"> 
+    <div className="lista">
+      <h1 className="titulo">Filmes Mais Populares</h1>
       {filmes.map(filme => (
         <div className="coluna" key={filme.id}>
           <Link to={`/movie/${filme.id}`}>
@@ -36,7 +35,7 @@ function Filmes() {
               className="imagem-filme"
               alt={filme.title}
             />
-            <p className="titulo">{filme.title}</p>
+            <h2 className="titulo">{filme.title}</h2>
             <p className="avaliacao">  {filme.vote_average}</p>
           </Link>
         </div>
