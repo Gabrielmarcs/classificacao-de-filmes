@@ -3,7 +3,7 @@ const Menu = () => {
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/filmes">Filmes</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
             </ul>
         </nav>
     )
