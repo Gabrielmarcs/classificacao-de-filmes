@@ -1,0 +1,26 @@
+@import '../estilos/global.scss';
+
+nav{
+    background-color:black;
+    padding: 1rem;
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    li{
+        a{
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        a:hover{
+            color: rgb(52, 29, 116);
+        }
+    }
+}

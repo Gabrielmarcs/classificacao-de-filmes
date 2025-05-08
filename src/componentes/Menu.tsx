@@ -1,3 +1,5 @@
+import '../estilos/menu.scss';
+
 const Menu = () => {
     return (
         <nav>
