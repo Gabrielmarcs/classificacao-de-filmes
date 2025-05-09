@@ -1,0 +1,48 @@
+@use '../estilos/global.scss';
+
+.detalhes {
+    padding: 2rem;
+  
+    .conteudo {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: flex-start;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+    .coluna-imagem {
+      flex: 1;
+      max-width: 400px;
+  
+      .imagem {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  
+    .coluna-info {
+      flex: 2;
+  
+      .titulo {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+  
+      h2 {
+        margin-top: 1.5rem;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+    }
+  }
+  
