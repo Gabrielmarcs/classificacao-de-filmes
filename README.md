@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# 🎬 TMDb Filmes - Aplicação React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Classificação de filmes**, uma aplicação construída com **React + TypeScript**, que consome a **API pública do The Movie Database (TMDb)** para exibir os principais filmes em destaque e lançamentos recentes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- 🔍 Visualização de **filmes populares**
+- 🗓️ Acompanhamento de **lançamentos do ano atual**
+- 📱 Interface **responsiva**
+- ⭐ Exibição de avaliação (nota) dos filmes
+- 🎨 Design com uso de **SASS (SCSS)** e **Bootstrap 5**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [SASS (SCSS)](https://sass-lang.com/)
+- [Bootstrap 5+](https://getbootstrap.com/)
+- [TMDb API](https://www.themoviedb.org/documentation/api)
+
+---
+
+## 📦 Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Gabrielmarcs/classificacao-de-filmes.git
+
+# Acesse a pasta
+cd classificacao-de-filmes
+
+# Instale as dependências
+npm install
+
+# Rode a aplicação
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse no navegador: `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🔑 Configurando a API do TMDb
+
+1. Acesse: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
+2. Crie uma conta e gere sua chave de API
+3. Solicite uma chave de API (Bearer Token).
+4. Após obter sua chave, abra o arquivo src/servicos/api.ts e substitua "suaChave" pela sua chave real
+---
+
+## 📁 Estrutura de Pastas
+
 ```
+src/
+│
+├── componentes/
+│   └── Header.tsx
+├── paginas/
+│   ├── Populares.tsx
+│   └── Lancamentos.tsx
+├── estilos/
+│   └── lancamentos.scss
+├── servicos/
+│   └── api.ts
+├── App.tsx
+└── main.tsx
+```
+
+
+---
