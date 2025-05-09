@@ -1,6 +1,6 @@
-# 🎬 TMDb Filmes - Aplicação React
+# 🎬 Classificação de filmes
 
-**Classificação de filmes**, uma aplicação construída com **React + TypeScript**, que consome a **API pública do The Movie Database (TMDb)** para exibir os principais filmes em destaque e lançamentos recentes.
+Uma aplicação construída com **React + Vite + TypeScript**, que consome a **API pública do The Movie Database (TMDb)** para exibir os principais filmes em destaque e lançamentos recentes.
 
 ---
 
