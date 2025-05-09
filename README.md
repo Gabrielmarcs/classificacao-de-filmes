@@ -59,14 +59,25 @@ Acesse no navegador: `http://localhost:5173`
 src/
 │
 ├── componentes/
-│   └── Header.tsx
-├── paginas/
-│   ├── Populares.tsx
-│   └── Lancamentos.tsx
+│   ├── Menu.tsx
+│   └── Rodape.tsx
+│
 ├── estilos/
-│   └── lancamentos.scss
+│   ├── detalhes.scss
+│   ├── filmes.scss
+│   ├── global.scss
+│   ├── lancamentos.scss
+│   ├── menu.scss
+│   └── rodape.scss
+│
+├── paginas/
+│   ├── Detalhes.tsx
+│   ├── Filmes.tsx
+│   └── Lancamentos.tsx
+│
 ├── servicos/
 │   └── api.ts
+│
 ├── App.tsx
 └── main.tsx
 ```
