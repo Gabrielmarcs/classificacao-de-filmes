@@ -1,74 +1,78 @@
-@use '../estilos/global.scss';
-.lista{
+.lista {
     padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    .titulo{
-        text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .titulo-pagina {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      font-family: Arial, sans-serif;
+  
+      @media (max-width: 768px) {
         font-size: 2rem;
-        margin-bottom: 2rem;
-        color: rgb(253, 248, 248);
+      }
+  
+      @media (max-width: 480px) {
+        font-size: 1.7rem;
+      }
     }
-
-    .grade{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+  
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      justify-items: center;
     }
-
-    .card{
-        background-color: rgb(40, 39, 41);
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
-        text-align: center;
-    }
-    .card:hover{
+  
+    .card {
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+      background-color: rgb(40, 39, 41);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+  
+      &:hover {
         transform: scale(1.05);
-    }
-
-    a{
-        text-decoration: none;
-        color: inherit;
+      }
+  
+      a {
         display: block;
+        color: inherit;
+        text-decoration: none;
         padding: 1rem;
-    }
-
-    .imagem-filme{
+      }
+  
+      .imagem-filme {
         width: 100%;
-        height: auto;
+        height: 300px;
+        object-fit: cover;
         border-radius: 8px;
-    }
-
-    .titulo{
-        margin-top: 0.5rem;
+      }
+  
+      .titulo-filme {
         font-size: 1.1rem;
         font-weight: bold;
-        text-shadow: #000000;
-    }
+        margin: 0.5rem 0;
+        color: #fff;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
 
-    .avaliacao{
+      }
+  
+      .avaliacao {
         font-size: 1rem;
         color: rgb(242, 255, 66);
-        text-shadow: #ffffff;
+      }
     }
-}
-.titulo-pagina {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 2rem 0;
-    color: #ffffff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    font-family: Arial, sans-serif;
+  }
   
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-  
-    @media (max-width: 480px) {
-      font-size: 1.7rem;
-    }
-}
