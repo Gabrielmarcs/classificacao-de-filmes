@@ -18,9 +18,8 @@ function Filmes() {
     // e armazenando os filmes no estado
     api.get('movie/popular?language=pt-BR&page=1')
     .then(resposta => {
-      //exibir os 10 primeiros filmes
-      const dezFilmes = resposta.data.results.slice(0, 10);
-      setFilmes(dezFilmes);
+      const filmes = resposta.data.results;
+      setFilmes(filmes);
     })
     .catch(error => console.error(error));
   }, []);
@@ -40,7 +39,7 @@ function Filmes() {
                 className="imagem-filme"
                 alt={filme.title}
               />
-              <h2 className="titulo">{filme.title}</h2>
+              <h2 className="titulo-filme">{filme.title}</h2>
               <p className="avaliacao">⭐{filme.vote_average.toFixed(1)}</p>
             </Link>
           </div>
